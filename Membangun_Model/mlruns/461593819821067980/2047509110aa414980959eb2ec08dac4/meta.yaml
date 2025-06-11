@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/immab/Documents/SMSML_Dany/Membangun_Model/mlruns/461593819821067980/2047509110aa414980959eb2ec08dac4/artifacts
+end_time: 1749659209890
+entry_point_name: ''
+experiment_id: '461593819821067980'
+lifecycle_stage: active
+run_id: 2047509110aa414980959eb2ec08dac4
+run_name: KNN_Tuning_2025-06-11_23-26-27
+run_uuid: 2047509110aa414980959eb2ec08dac4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749659187835
+status: 3
+tags: []
+user_id: K E I
