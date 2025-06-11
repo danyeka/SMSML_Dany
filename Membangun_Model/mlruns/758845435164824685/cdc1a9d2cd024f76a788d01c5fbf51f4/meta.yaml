@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/immab/Documents/SMSML/Membangun_Model/mlruns/758845435164824685/cdc1a9d2cd024f76a788d01c5fbf51f4/artifacts
+end_time: 1749542636838
+entry_point_name: ''
+experiment_id: '758845435164824685'
+lifecycle_stage: active
+run_id: cdc1a9d2cd024f76a788d01c5fbf51f4
+run_name: KNN_Modelling_2025-06-10_15-03-40
+run_uuid: cdc1a9d2cd024f76a788d01c5fbf51f4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749542620608
+status: 3
+tags: []
+user_id: danyeka
