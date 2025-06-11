@@ -5,21 +5,32 @@ from sklearn.model_selection import train_test_split
 import random
 import numpy as np
 from datetime import datetime
-from dagshub import dagshub_logger
-import dagshub
-
-dagshub.init(repo_owner='danyeka', repo_name='lung-cancer', mlflow=True)
-
-mlflow.set_tracking_uri("http://127.0.0.1:5000/") # untuk di lokal
+# Commented out DagHub to avoid URI conflicts
+# from dagshub import dagshub_logger
+# import dagshub
+# dagshub.init(repo_owner='danyeka', repo_name='lung-cancer', mlflow=True)
 mlflow.set_tracking_uri("https://dagshub.com/danyeka/lung-cancer.mlflow")
-mlflow.set_tracking_uri("file:///" + "c:/Users/immab/Documents/SMSML/Membangun_Model/mlruns")
 
+# Set tracking URI ke local file storage
+tracking_uri = "file:///" + "c:/Users/immab/Documents/SMSML_Dany/Membangun_Model/mlruns"
+mlflow.set_tracking_uri(tracking_uri)
+
+print(f"MLflow Tracking URI: {tracking_uri}")
+print("Untuk melihat MLflow UI, jalankan: mlflow ui --port 5000")
+print("Kemudian buka: http://localhost:5000")
 
 mlflow.set_experiment("Lung Cancer Prediction")
 
 mlflow.sklearn.autolog()
 
 data = pd.read_csv("lung_cancer_clean.csv")
+
+for col in data.columns:
+    if col != 'lung_cancer':
+        data[col] = data[col].astype('float64')
+    else:
+        # Keep target variable as int for classification
+        data[col] = data[col].astype('int')
 
 X_train, X_test, y_train, y_test = train_test_split(
     data.drop("lung_cancer", axis=1),

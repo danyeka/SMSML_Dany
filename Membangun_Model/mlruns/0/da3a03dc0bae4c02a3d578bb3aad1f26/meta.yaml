@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/da3a03dc0bae4c02a3d578bb3aad1f26/artifacts
+deleted_time: 1749657589081
+end_time: 1749657271134
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: da3a03dc0bae4c02a3d578bb3aad1f26
+run_name: KNN_Tuning_2025-06-11_22-54-19
+run_uuid: da3a03dc0bae4c02a3d578bb3aad1f26
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749657260102
+status: 4
+tags: []
+user_id: danyeka

@@ -7,18 +7,37 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import seaborn as sns
 import matplotlib.pyplot as plt
+import mlflow.sklearn
 from mlflow.models.signature import infer_signature
 import json
 from datetime import datetime
-from dagshub import dagshub_logger
-import dagshub
+# Commented out DagHub to avoid URI conflicts
+# from dagshub import dagshub_logger
+# import dagshub
+# dagshub.init(repo_owner='danyeka', repo_name='lung-cancer', mlflow=True)
 
-dagshub.init(repo_owner='danyeka', repo_name='lung-cancer', mlflow=True)
+# Set tracking URI ke local file storage
+tracking_uri = "file:///" + "c:/Users/immab/Documents/SMSML_Dany/Membangun_Model/mlruns"
+mlflow.set_tracking_uri(tracking_uri)
+
+print(f"MLflow Tracking URI: {tracking_uri}")
+print("Untuk melihat MLflow UI, jalankan: mlflow ui --port 5000")
+print("Kemudian buka: http://localhost:5000")
+
+mlflow.set_experiment("Lung Cancer Prediction Tuning")
 
 # Load data dan split train-test
 data = pd.read_csv("lung_cancer_clean.csv")
-mlflow.set_tracking_uri("https://dagshub.com/danyeka/lung-cancer.mlflow")
 
+# Convert columns to appropriate data types
+for col in data.columns:
+    if col != 'lung_cancer':
+        data[col] = data[col].astype('float64')
+    else:
+        # Keep target variable as int for classification
+        data[col] = data[col].astype('int')
+
+# Enable autolog for automatic tracking
 mlflow.sklearn.autolog()
 
 X_train, X_test, y_train, y_test = train_test_split(

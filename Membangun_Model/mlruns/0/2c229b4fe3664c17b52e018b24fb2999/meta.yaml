@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/2c229b4fe3664c17b52e018b24fb2999/artifacts
+deleted_time: 1749657589081
+end_time: 1749657442390
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 2c229b4fe3664c17b52e018b24fb2999
+run_name: KNN_Tuning_2025-06-11_22-57-05
+run_uuid: 2c229b4fe3664c17b52e018b24fb2999
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749657426206
+status: 4
+tags: []
+user_id: K E I
